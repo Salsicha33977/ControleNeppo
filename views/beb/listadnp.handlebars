@@ -1,0 +1,52 @@
+<h1>Pedidos em dinheiro:</h1>
+{{#each compraDnp}}
+
+
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ _id }}" aria-expanded="false" aria-controls="collapseOne">
+       {{user}}  
+        </button>
+          {{data}}
+      </h5>
+    </div>
+    <div id="collapse{{ _id }}" class="collapse" aria-labelledby="heading" data-parent="#accordion">
+ {{#each this.items }}
+      <div class="card-body">
+        <li class="list-group-item">
+              <span class="badge">R${{ this.price }}</span>
+                 {{ this.item.title }} | {{ this.qty }} Unidade
+                 
+              </li>
+ {{/each}}
+
+   Total :R${{cart.totalPrice}}
+   <br><div class="btn-group" role="group" >
+                        <form method="POST" action="/beb/quitar">
+                         <input type="hidden" name="id" value="{{this._id}}">
+                       <button type="submit" class="btn btn-success" style="position: relative;
+  left: 950px; right: 20px ">Quitar</button>
+  </form>
+  </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{{/each}}

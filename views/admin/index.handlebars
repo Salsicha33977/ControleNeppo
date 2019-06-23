@@ -1,0 +1,22 @@
+
+<div class="card">
+<h2>Produtos para salvar:</h2>
+
+<div class="card-body">
+    <a href="/"><button class="btn btn-warning " style="margin-left: 90%">Voltar</button></a>
+<form action="/admin/compras/add" method="post">
+<label>URL da Imagem:</label>
+<input type="url" id="img" name="img" class="form-control" placeholder="URL  produto" required>
+<label>Nome da Bebida:</label>
+<input type="text" id="title" name="title" class="form-control" placeholder="Nome do produto" required>
+<label>Estoque:   </label>
+<input type="number" id="qtd" name="qtd" class="form-control" placeholder="Quantidade" required>
+<label>Preço:</label>
+<input type="number" id="price" name="price"step="0.010" class="form-control" placeholder="Preço" required >
+
+<br>
+
+<button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+</form>
+</div>
+</div>

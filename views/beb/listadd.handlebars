@@ -1,0 +1,41 @@
+{{#if compraDp}}
+
+<h2>Histórico: </h2>
+{{#each compraDp}}
+
+
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ _id }}" aria-expanded="false" aria-controls="collapseOne">
+       Pedido feito no dia  {{data}}
+        </button>
+         
+      </h5>
+    </div>
+    <div id="collapse{{ _id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+ {{#each this.items }}
+      <div class="card-body">
+        <li class="list-group-item">
+              <span class="badge">R${{ this.price }}</span>
+                 {{ this.item.title }} | {{ this.qty }} Unidade
+                 
+              </li>
+ {{/each}}
+
+   Total :R${{cart.totalPrice}}
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  {{/each}}
+
+  {{else}}
+
+  <h1>Você não fez nenhum pedido ainda</h1>
+
+  {{/if}}

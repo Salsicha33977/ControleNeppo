@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar" style="background;: white; box-shadow: 3px 1px 3px rgba(90, 90, 90, 0.5)">
+
+  <img src="https://oficina.neppo.com.br/control-panel/resources/img/logo.png" width="15%"   >
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="width: 100%; margin-top:5px;">
+       <a class="nav-link" href="/" style="color:black">
+
+    <img src="https://security.ufpb.br/ladepi/contents/imagens/casa-preta.png/@@images/image.png" width="25" height="25" style="padding: 0px 4px 6px 3px !important; margin-left:25px; ">
+       Home
+        </a>
+          {{#if user}}
+            <li>
+          <a class="nav-link" href="/beb/pedido" style="color:black">Fazer pedido<span class="sr-only">(current)</span></a>
+          </li>
+          <li>
+         <!-- <a class="nav-link" href="/beb/lista" style="color:black">Pedidos<span class="sr-only">(current)</span></a>
+          </li>--> {{#if user.eAdmin}}
+            <div class="btn-group">
+
+                           <a href="#" class="nav-link" data-toggle="dropdown" style="color: black;">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li> <a class="nav-link" href="/admin/compras" style="color:black">Cadastrar Produtos<span class="sr-only">(current)</span></a></li>
+                                <li> <a class="nav-link" href="/admin/remove" style="color:black">Editar/Remover Produtos<span class="sr-only">(current)</span></a></li>         
+                                     <li><a class="nav-link" href="/beb/divida" style="color:black">Pedidos em dinheiro<span class="sr-only">(current)</span></a></li>   
+                                      <li><a class="nav-link" href="/beb/dividapp" style="color:black">Pedidos no PicPay<span class="sr-only">(current)</span></a></li>     
+                              </ul>
+                        </div> 
+                          {{/if}}
+     
+                        <div class="btn-group">
+
+                           <a href="#" class="nav-link" data-toggle="dropdown" style="color: black;">Historico <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li> <a class="nav-link" href="/beb/historicopp" style="color:black">Pedidos pelo PicPay<span class="sr-only">(current)</span></a></li>
+                                   <li> <a class="nav-link" href="/beb/historicodd" style="color:black">Pedidos pelo Dinheiro<span class="sr-only">(current)</span></a></li>
+                            </ul>
+                        </div>  
+          
+          
+          <li><a class="nav-link mr-m2" href="/beb/carrinho" style="color:black; ">
+           <img src="data:image/png;base64,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" alt="..."
+            width="30" height="30" style=" padding: 0px 4px 6px 3px !important;"> 
+             <label  style="color: rgb(38, 0, 255);">{{session.cart.totalQty}}</label>
+ 
+           </a>
+           </li>
+             <li>
+          <a class="nav-link" href="/usuarios/logout" style="color:black; margin-left: 650px">Sair<span class="sr-only">(current)</span></a>
+          </li>
+
+  
+     
+         <!-- <a class="nav-link" href="/beb/carrinho" style="color:black; position: fixed;
+   rigth: 0pt; ">Carrinho de compras {{session.cart.totalQty}}<span class="sr-only">(current)</span></a>
+          </li>-->
+          {{else}} 
+          <li>
+          <a class="nav-link" href="/usuarios/criar" style="color:black">Cadastro <span class="sr-only">(current)</span></a>
+          </li>
+          <li>
+          <a class="nav-link" href="/usuarios/login" style="color:black">Login <span class="sr-only">(current)</span></a>
+          </li>
+  </div>
+  {{/if}}
+
+
+</nav>
+        

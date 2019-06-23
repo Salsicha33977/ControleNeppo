@@ -1,0 +1,22 @@
+{{#if user}}
+  <h3 style="color: darkblue">Bem-vindo {{user.nome}} 
+  </h3>
+<div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+    <h5 class="display-4">O que deseja beber?</h5>
+    <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/beb/pedido" role="button">Faça seu pedido </a>
+  </div>
+</div>
+
+{{else}}
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo</h1>
+  <p class="lead">Aqui você faz o seu carrinho do que você deseja beber, é faz pagamento no PicPay ou no dinheiro pagando até o dia 10 de cada mês.</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/usuarios/criar" role="button">Crie sua conta</a>
+    <a class="btn btn-primary btn-lg" href="/usuarios/login" role="button">Faça o Login</a>
+</div>
+
+{{/if}}
